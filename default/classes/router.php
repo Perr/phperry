@@ -2,6 +2,10 @@
 
 switch (strtolower(UrlParams::getParam(0)))
 {
+	case "":
+		Headers::setLocation("/news");
+		break;
+
 	case "welcome":
 	case "news":
 		include Config::PAGESPATH."hello.php";
@@ -12,5 +16,5 @@ switch (strtolower(UrlParams::getParam(0)))
 		break;
 
 	default :
-		Headers::setLocation("/news");
+		include Config::PAGESPATH."responses".DIRECTORY_SEPARATOR."404.php";
 }

@@ -19,7 +19,12 @@ function __autoload($classname)
 		case "CONTENTTYPES":
 			include Config::CLASSPATH."headers".DIRECTORY_SEPARATOR."contenttypes.php";
 			break;
-		
+
+		//layout(s)
+		case "Page":
+			include Config::LAYOUTSPATH."Page.php";
+			break;
+
 		default :
 			if (file_exists(Config::OBJECTSPATH.$classname.".php"))
 			{

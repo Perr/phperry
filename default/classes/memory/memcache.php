@@ -17,7 +17,7 @@ class Memory extends Memcache
 		return self::$instance;
 	}
 
-	function  __construct()
+	function __construct()
 	{
 		$this->addserver(Config::MEMCACHEDHOST);
 	}

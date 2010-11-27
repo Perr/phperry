@@ -3,8 +3,8 @@
 class UrlParams
 {
 	private static $instance;
-
 	public $params;
+
 	/**
 	 *
 	 * @return UrlParams
@@ -30,6 +30,6 @@ class UrlParams
 
 	public static function getParam($val)
 	{
-		return UrlParams::getInstance()->params[intval($val)];
+		return strval(UrlParams::getInstance()->params[intval($val)]);
 	}
 }

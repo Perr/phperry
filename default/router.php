@@ -16,5 +16,5 @@ switch (strtolower(UrlParams::getParam(0)))
 		break;
 
 	default :
-		include Config::PAGESPATH."responses".DIRECTORY_SEPARATOR."404.php";
+		include Config::PAGESPATH."default".DIRECTORY_SEPARATOR."404.php";
 }

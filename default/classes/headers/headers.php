@@ -2,6 +2,7 @@
 
 class Headers
 {
+
 	static function setContentType($headertype)
 	{
 		header('Content-type: '.$headertype);

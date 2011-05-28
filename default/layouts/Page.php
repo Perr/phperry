@@ -24,7 +24,8 @@ class Page
 
 	function __destruct()
 	{
-		echo $this->getHtml().$this->output.$this->getClosingHtml();
+		//echo $this->getHtml().$this->output.$this->getClosingHtml();
+		echo $this->getClosingHtml();
 	}
 
 	function getHtml()

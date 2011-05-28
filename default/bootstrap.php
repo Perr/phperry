@@ -1,5 +1,4 @@
 <?php
 
-include "config".DIRECTORY_SEPARATOR."config.php";
-include Config::CLASSPATH."classloader.php";
-include "router.php";
+error_reporting(E_ALL);
+Router::Route();

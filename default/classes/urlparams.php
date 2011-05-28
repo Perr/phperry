@@ -20,7 +20,7 @@ class UrlParams
 
 	function __construct()
 	{
-		$req = $_SERVER["REQUEST_URI"];
+		$req = str_replace(substr($_SERVER["PHP_SELF"], 0, -10), "", $_SERVER["REQUEST_URI"]);
 		if ($req[0] == "/")
 		{
 			$req = substr($req, 1);
@@ -30,6 +30,11 @@ class UrlParams
 
 	public static function getParam($val)
 	{
-		return strval(UrlParams::getInstance()->params[intval($val)]);
+		$val = intval($val);
+		$params = UrlParams::getInstance()->params;
+		if(isset($params[$val])) {
+			return strval($params[$val]);
+		}
+		return null;
 	}
 }

@@ -1,20 +1,27 @@
 <?php
 
-switch (strtolower(UrlParams::getParam(0)))
+class Router
 {
-	case "":
-		Headers::setLocation("/news");
-		break;
+	static function Route()
+	{
+		$param0 = strtolower(UrlParams::getParam(0));
+		
+		if(file_exists(Config::$CONTROLLERSPATH.$param0.".php"))
+		{
+			include Config::$CONTROLLERSPATH.$param0.".php";
+			$controllername = $param0."Controller";
+			$controller = new $controllername();
+			$view = UrlParams::getParam(1);
+			if(!$view) {
+				$view = Config::$DEFAULTVIEW;
+			}
+			if(method_exists($controller, $view)) {
+				$layout = Page::get();
+				echo $layout->getHtml();
+				$controller->$view();
+				include Config::$VIEWSPATH.$param0.DIRECTORY_SEPARATOR.$view.".phtml";
+			}
+		}
+	}
 
-	case "welcome":
-	case "news":
-		include Config::PAGESPATH."hello.php";
-		break;
-
-	case "profile":
-		include Config::PAGESPATH."profile.php";
-		break;
-
-	default :
-		include Config::PAGESPATH."default".DIRECTORY_SEPARATOR."404.php";
 }

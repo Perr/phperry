@@ -19,7 +19,7 @@ class Memory extends Memcache
 
 	function __construct()
 	{
-		$this->addserver(Config::MEMCACHEDHOST);
+		$this->addserver(Config::$MEMCACHEDHOST);
 	}
 
 	static function DeleteObject($object, $idsarray = null)

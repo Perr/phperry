@@ -4,8 +4,13 @@ class profileController
 {
 	public $name = "phperr;)";
 	
-	function index()
+	public function index()
 	{
 		$this->name = "Harr....";
+	}
+	
+	public function test()
+	{
+		$this->name = "testview";
 	}
 }

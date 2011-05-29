@@ -19,7 +19,14 @@ class Router
 				$layout = Page::get();
 				echo $layout->getHtml();
 				$controller->$view();
-				include Config::$VIEWSPATH.$param0.DIRECTORY_SEPARATOR.$view.".phtml";
+				$viewfile = Config::$VIEWSPATH.$param0.DIRECTORY_SEPARATOR.$view.".phtml";
+				if(file_exists($viewfile)) {
+					include $viewfile;
+				} else {
+					echo "Warning: View '".$viewfile."' not found!";
+				}
+			} else {
+				echo "Warning: Method '".$view."' not found in controller '".$controllername."'!";
 			}
 		}
 	}

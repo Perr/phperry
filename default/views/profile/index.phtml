@@ -1,4 +1,7 @@
 My name is: <?php
 
 /* @var $controller profileController */
-echo $controller->name;
+echo $controller->name; ?><br />
+<?php var_dump(Session::$sessionvar); ?>
+<?php Session::$sessionvar = true; ?><br />
+<?php var_dump(Session::$sessionvar);

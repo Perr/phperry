@@ -4,13 +4,13 @@ class Config
 {
 	static $DEFAULTVIEW		= "index";
 	
-	static $SYSTEMROOT		= "/var/www/";
-	static $PAGESPATH		= "/var/www/pages/";
-	static $CONTROLLERSPATH	= "/var/www/controllers/";
-	static $VIEWSPATH		= "/var/www/views/";
+	static $SYSTEMROOT		= "/var/www/-example";
+	static $PAGESPATH		= "/var/www/pages/-example";
+	static $CONTROLLERSPATH	= "/var/www/controllers/-example";
+	static $VIEWSPATH		= "/var/www/views/-example";
 	
-	static $DOMAIN			= "http://example.com/";
-	static $WEBROOTPATH		= "http://example.com/path/to/website/";
+	static $DOMAIN			= "http://example.com/-example";
+	static $WEBROOTPATH		= "http://example.com/path/to/website/-example";
 
 	static $MEMCACHEDHOST	= "127.0.0.1";
 }
